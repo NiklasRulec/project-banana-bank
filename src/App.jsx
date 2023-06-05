@@ -1,13 +1,12 @@
-import './App.css'
-import BankSection from './components/BankSection'
+import "./App.css";
+import BankSection from "./components/BankSection";
 
 function App() {
-
   return (
     <>
-    <BankSection />
+      <BankSection />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
