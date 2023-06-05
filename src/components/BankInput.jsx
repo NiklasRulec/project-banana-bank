@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ReactDOM } from "react";
+import BalanceOutput from "./BalanceOutput";
 
 const BankInput = () => {
 
@@ -13,7 +13,7 @@ const BankInput = () => {
     function deposit(){
         event.preventDefault();
         if(inputValue == ""){
-            alert("Eingabe machen")
+            alert("Bitte einen Wert eingeben")
         } else {
             setBalance((prev) => Number(prev + inputValue))
             setInputValue("")
@@ -25,7 +25,7 @@ const BankInput = () => {
     function withdraw(){
         event.preventDefault();
         if(inputValue == ""){
-            alert("Eingabe machen")
+            alert("Bitte einen Wert eingeben")
         } else {
             setBalance((prev) => Number(prev - inputValue))
             setInputValue("")
@@ -49,9 +49,7 @@ const BankInput = () => {
     return ( 
         <article className="bank-input">
             <div className="balance-output">
-                <h2>Kontostand</h2>
-                <h3>{balance}€</h3>
-                <button className="loan-button" style={{display: currentBalance ? "none" : "block"}}>Kredit anfragen</button>
+                <BalanceOutput balance={balance} currentbalance={currentBalance}/>
             </div>
             <div className="transactions">
                 <h2>Transaktionen</h2>
